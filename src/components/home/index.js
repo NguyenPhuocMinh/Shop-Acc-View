@@ -67,12 +67,12 @@ const Home = () => {
           </div>
           {isLoading && <LinearProgress />}
           <div>
-            <Grid container style={{ display: 'inline' }} spacing={2}>
+            <Grid container style={{ display: 'inline' }}>
               <Grid item xs={12} style={{ paddingTop: '10vh' }}>
                 <Grid container justify="center" spacing={2}>
                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((value) => {
                     return (
-                      <GridCard key={value} value={value} classes={classes} />
+                      <GridCard  value={value} classes={classes} />
                     )
                   })}
                 </Grid>

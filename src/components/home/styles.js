@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => {
       height: '5vh',
     },
     root: {
-      background: '#000',
       maxWidth: '270px',
       border: '2px ridge #757575'
     },

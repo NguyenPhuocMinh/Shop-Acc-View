@@ -21,10 +21,10 @@ const GridCard = props => {
   const skin = get(value, 'skin');
   const pearl_points = get(value, 'pearl_points');
   const rank = get(value, 'rank');
-
+  const numberAcc = get(value, 'numberAcc');
   return (
     <Grid key={id} item>
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{ background: '#000', width: '300px' }}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" style={{ backgroundColor: '#8bc34a' }}>
@@ -32,7 +32,7 @@ const GridCard = props => {
             </Avatar>
           }
           style={{ color: '#9e9e9e' }}
-          title="Shrimp and Chorizo Paella"
+          title={`${numberAcc} - Shop Min Min`}
         />
         <CardMedia
           className={classes.media}
