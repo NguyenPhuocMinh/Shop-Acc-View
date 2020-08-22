@@ -2,15 +2,26 @@
   "name": "acc-ui-view",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://0.0.0.0:8080",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "formik": "^2.1.5",
     "react": "^16.13.1",
+    "react-admin": "^3.8.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "yup": "^0.29.3"
   },
   "scripts": {
+    "rest-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=http://0.0.0.0:8080/rest/api REACT_APP_REST_API_URL=http://0.0.0.0:8080/rest/api REACT_APP_DATA_PROVIDER=restapi npm start",
+    "build-api-heroku": "REACT_APP_REST_API_AUTHENTICATE_URL=/rest/api REACT_APP_REST_API_URL=/rest/api REACT_APP_DATA_PROVIDER=restapi npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
