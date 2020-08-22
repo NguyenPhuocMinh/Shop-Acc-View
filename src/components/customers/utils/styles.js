@@ -7,6 +7,9 @@ const styles = makeStyles((theme) => ({
   paper: {
     width: '340px'
   },
+  text_center: {
+    textAlign: 'center'
+  },
   margin_span: {
     marginLeft: '5px',
   },
