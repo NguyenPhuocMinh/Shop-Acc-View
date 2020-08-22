@@ -87,7 +87,7 @@ const Login = props => {
         <DialogTitle className={classes.text_center}>Đăng nhập</DialogTitle>
         <DialogContent>
           <DialogContentText className={classes.text_center}>
-            Nếu bạn chưa tài khoải xin đăng ký tại đây !
+            Nếu bạn chưa có tài khoản xin đăng ký tại đây !
             <Button>
               <Register setOpenLogin={setOpenLogin} />
             </Button>
@@ -95,7 +95,6 @@ const Login = props => {
           <FormLogin
             handleSubmitLogin={handleSubmitLogin}
             handleClose={handleClose}
-            classes={classes}
           />
         </DialogContent>
       </Dialog>

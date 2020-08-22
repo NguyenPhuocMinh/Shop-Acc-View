@@ -13,14 +13,15 @@ const styles = makeStyles({
     fontSize: '1.875em',
     fontWeight: 'bold',
     paddingTop: '10px',
-    fontFamily: 'Sofia'
+    fontFamily: 'Sofia',
+    paddingLeft : '22px'
   },
   header_a: {
     textDecoration: 'none',
     color: '#e53935'
   },
   footer: {
-    height: '35vh',
+    height: '50vh',
   },
   footer_space_around: {
     display: 'flex',

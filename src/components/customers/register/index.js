@@ -96,7 +96,7 @@ const Register = props => {
         <DialogTitle className={classes.text_center}>Đăng ký</DialogTitle>
         <DialogContent>
           <DialogContentText className={classes.text_center}>
-            Nếu bạn đã có tài khoải xin đăng nhập tại đây !
+            Nếu bạn đã có tài khoản xin đăng nhập tại đây !
             <Button
               color="primary"
               onClick={handleClickRedirectLogin}
@@ -108,7 +108,6 @@ const Register = props => {
           <FormRegister
             handleSubmitRegister={handleSubmitRegister}
             handleClose={handleClose}
-            classes={classes}
           />
         </DialogContent>
       </Dialog>

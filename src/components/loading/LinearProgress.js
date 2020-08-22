@@ -5,6 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    paddingTop : '40vh'
   },
 });
 

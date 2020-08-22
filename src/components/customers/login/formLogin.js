@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 
 const FormLogin = props => {
-  const { handleSubmitLogin, handleClose, classes } = props;
+  const { handleSubmitLogin, handleClose } = props;
   return (
     <Formik
       initialValues={{
@@ -23,19 +23,17 @@ const FormLogin = props => {
           handleReset,
         } = props;
         return (
-          <Form onSubmit={handleSubmit} className={classes.half_line_margin}>
+          <Form onSubmit={handleSubmit}>
             <TextFieldCustom
               label="Email"
               type="text"
               name="email"
-              className={classes.text_field}
               {...props}
             />
             <TextFieldCustom
               label="Mật khẩu"
               type="password"
               name="password"
-              className={classes.text_field}
               {...props}
             />
             <DialogActions>
@@ -49,7 +47,7 @@ const FormLogin = props => {
                 disabled={!dirty}
                 color="primary"
               >
-                Đăng nhập
+                Xác nhận
               </Button>
               <Button
                 type="button"

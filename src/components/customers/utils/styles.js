@@ -7,15 +7,6 @@ const styles = makeStyles((theme) => ({
   paper: {
     width: '340px'
   },
-  half_line_margin: {
-    marginLeft: '10vh'
-  },
-  text_center: {
-    textAlign: 'center'
-  },
-  text_field: {
-    width: '360px',
-  },
   margin_span: {
     marginLeft: '5px',
   },

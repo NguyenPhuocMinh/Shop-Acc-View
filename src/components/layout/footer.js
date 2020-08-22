@@ -16,7 +16,7 @@ const Footer = () => {
     <Fragment>
       <CssBaseline />
       <Container fixed>
-        <Typography component="div" className={classes.footer} >
+        <Typography component="div" >
           <div className={classes.footer_space_around}>
             <Button className={classes.footer_grid_color}>
               <FacebookIcon />
@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
           <br />
           <Divider />
-          <div style={{ textAlign: 'center', paddingTop: '30px', color: '#8bc34a', fontWeight: 'bold' }}>
+          <div style={{ textAlign: 'center', paddingBottom: '20px', color: '#8bc34a', fontWeight: 'bold' }}>
             © 2020 ShopMinMin, Shop acc uy tín chất lượng.Cảm ơn quý khách đã ghé shop! .
           </div>
         </Typography>
