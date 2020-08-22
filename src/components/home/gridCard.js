@@ -27,7 +27,7 @@ const GridCard = props => {
       <Card className={classes.root}>
         <CardHeader
           avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
+            <Avatar aria-label="recipe" style={{ backgroundColor: '#8bc34a' }}>
               <StarBorderIcon />
             </Avatar>
           }
