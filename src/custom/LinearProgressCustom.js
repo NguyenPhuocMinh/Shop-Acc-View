@@ -1,15 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import useStyles from '../styles/LinearProgressStyle';
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    paddingTop : '40vh'
-  },
-});
-
-const LinearProgressFunc = () => {
+const LinearProgressCustom = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
 
@@ -36,4 +29,4 @@ const LinearProgressFunc = () => {
   );
 };
 
-export default LinearProgressFunc;
+export default LinearProgressCustom;

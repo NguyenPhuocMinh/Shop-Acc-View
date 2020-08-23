@@ -7,11 +7,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
-import useStyles from '../utils/styles';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import FormRegister from './formRegister';
-import { isEmpty } from 'lodash';
+import useStyles from '../styles/LoginStyle';
+import Register from './Register';
+import MenuCustomer from '../menu/OpenMenuCustomer';
+import FormLogin from '../form/FormLogin';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -19,19 +19,17 @@ const Transition = forwardRef(function Transition(props, ref) {
 
 const Alert = (props) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+};
 
-const Register = props => {
-  const { setOpenLogin } = props;
+const Login = props => {
   const classes = useStyles();
-  const [messageSuccess, setMessageSuccess] = useState('');
-  const [messageErrors, setMessageErrors] = useState('');
-  const [open, setOpenRegister] = useState(false);
+  const [open, setOpenLogin] = useState(false);
   const [openSnackBar, setOpenSnackBar] = useState(false);
+  const [messageErrors, setMessageErrors] = useState('');
+  const [customerLogin, setCustomerLogin] = useState(null);
 
   const handleClickOpen = () => {
-    setOpenRegister(true);
-    setOpenLogin(false);
+    setOpenLogin(true);
   };
 
   const handleCloseSnackBar = () => {
@@ -39,18 +37,12 @@ const Register = props => {
   };
 
   const handleClose = () => {
-    setOpenRegister(false);
+    setOpenLogin(false);
   };
 
-  const handleClickRedirectLogin = () => {
-    setOpenRegister(false);
-    setOpenLogin(true);
-  }
-
-  const handleSubmitRegister = (values) => {
-    console.log("handleSubmitRegister -> values", values)
+  const handleSubmitLogin = (values) => {
     const REST_API = process.env.REACT_APP_REST_API_URL;
-    const request = new Request(REST_API + `/customer/registers`, {
+    const request = new Request(REST_API + `/customer/logins`, {
       method: 'POST',
       body: JSON.stringify(values),
       headers: { 'Content-Type': 'application/json' },
@@ -67,13 +59,9 @@ const Register = props => {
         }
         return response.json()
           .then(result => {
-            if (!isEmpty(result.message)) {
-              setOpenSnackBar(true);
-              setMessageSuccess(result.message)
-            }
-            setOpenRegister(false);
-            setOpenLogin(true)
-            return result.message;
+            setCustomerLogin(result);
+            setOpenLogin(false);
+            return result;
           })
       })
       .catch(err => {
@@ -83,41 +71,36 @@ const Register = props => {
 
   return (
     <div>
-      <Button color="primary" onClick={handleClickOpen}>
-        <LockOpenIcon />
-        <span className={classes.margin_span}>Đăng ký</span>
-      </Button>
+      {customerLogin && customerLogin.isLogin ?
+        <MenuCustomer customer={customerLogin} /> :
+        <Button
+          style={{ color: '#8bc34a' }}
+          onClick={handleClickOpen}
+          startIcon={<AccountCircleIcon />}
+        >
+          Đăng nhập
+        </Button>
+      }
       <Dialog
         open={open}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
       >
-        <DialogTitle className={classes.text_center}>Đăng ký</DialogTitle>
+        <DialogTitle className={classes.text_center}>Đăng nhập</DialogTitle>
         <DialogContent>
           <DialogContentText className={classes.text_center}>
-            Nếu bạn đã có tài khoản xin đăng nhập tại đây !
-            <Button
-              color="primary"
-              onClick={handleClickRedirectLogin}
-            >
-              <AccountCircleIcon />
-              <span className={classes.margin_span}>Đăng nhập</span>
+            Nếu bạn chưa có tài khoản xin đăng ký tại đây !
+            <Button>
+              <Register setOpenLogin={setOpenLogin} />
             </Button>
           </DialogContentText>
-          <FormRegister
-            handleSubmitRegister={handleSubmitRegister}
+          <FormLogin
+            handleSubmitLogin={handleSubmitLogin}
             handleClose={handleClose}
           />
         </DialogContent>
       </Dialog>
-      {openSnackBar &&
-        <Snackbar open={openSnackBar} autoHideDuration={3000} onClose={handleCloseSnackBar}>
-          <Alert onClose={handleCloseSnackBar} severity="success">
-            {messageSuccess}
-          </Alert>
-        </Snackbar>
-      }
       {openSnackBar &&
         <Snackbar open={openSnackBar} autoHideDuration={3000} onClose={handleCloseSnackBar}>
           <Alert onClose={handleCloseSnackBar} severity="error">
@@ -129,4 +112,4 @@ const Register = props => {
   );
 };
 
-export default Register;
+export default Login;

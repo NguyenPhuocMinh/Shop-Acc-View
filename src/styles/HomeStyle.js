@@ -7,11 +7,6 @@ const useStyles = makeStyles(theme => {
       border: '1px ridge #212121',
       height: 'auto'
     },
-    main_head: {
-      display: 'flex',
-      justifyContent: 'center',
-      height: '5vh',
-    },
     root: {
       maxWidth: '270px',
       border: '2px ridge #757575'
@@ -19,17 +14,6 @@ const useStyles = makeStyles(theme => {
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9
-    },
-    avatar: {
-      backgroundColor: '#8bc34a',
-    },
-    color_avatar : {
-      color : '#8bc34a'
-    },
-    paper: {
-      height: '380px',
-      width: '280px',
-      border: '1px solid white'
     },
     typography: {
       display: 'flex',

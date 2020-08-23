@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import useStyles from './styles';
+import React from 'react';
+import useStyles from '../styles/HeaderStyle';
 import { Button } from '@material-ui/core';
-
-import Login from '../customers/login';
+import { Link } from 'react-router-dom';
+import Login from './Login';
 
 const Header = () => {
   const classes = useStyles();
-  const [statusLogin, setStatusLogin] = useState(false);
 
   return (
     <div id="header" className={classes.header}>
       <div id="header-shop" className={classes.header_shop}>
         <span className={classes.header_span}>
-          <a className={classes.header_a}>Shop Acc MinMin</a>
+          <Link to="/" className={classes.header_a}>Shop Acc MinMin</Link>
         </span>
         <Button >
-          <Login setStatusLogin={setStatusLogin} />
+          <Login />
         </Button>
       </div>
     </div>

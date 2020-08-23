@@ -1,19 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import TablePagination from '@material-ui/core/TablePagination';
+import useStyles from '../styles/PaginationStyle';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    // '& > *': {
-    //   marginTop: theme.spacing(2),
-    // },
-    background: '#9e9e9e',
-    display: 'flex',
-    justifyContent: 'center'
-  },
-}));
-
-const PaginationRounded = props => {
+const PaginationCustom = props => {
   const {
     count,
     page,
@@ -39,4 +28,4 @@ const PaginationRounded = props => {
   );
 };
 
-export default PaginationRounded;
+export default PaginationCustom;

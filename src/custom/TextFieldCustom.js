@@ -3,8 +3,13 @@ import TextField from '@material-ui/core/TextField';
 
 const TextFieldCustom = props => {
   const {
-    label, name, handleChange, handleBlur,
-    values, errors, touched,
+    label,
+    name,
+    handleChange,
+    handleBlur,
+    values,
+    errors,
+    touched,
     type
   } = props;
   return (

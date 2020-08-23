@@ -2,13 +2,8 @@ import React, { Fragment } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import { Divider } from '@material-ui/core';
-
-import useStyles from './styles';
+import useStyles from '../styles/FooterStyle';
 
 const Footer = () => {
   const classes = useStyles();
@@ -17,20 +12,6 @@ const Footer = () => {
       <CssBaseline />
       <Container fixed>
         <Typography component="div" >
-          <div className={classes.footer_space_around}>
-            <Button className={classes.footer_grid_color}>
-              <FacebookIcon />
-              <span className={classes.footer_margin_left}>Facebook</span>
-            </Button>
-            <Button className={classes.footer_grid_color}>
-              <TwitterIcon />
-              <span className={classes.footer_margin_left}>Twitter</span>
-            </Button>
-            <Button className={classes.footer_grid_color}>
-              <YouTubeIcon />
-              <span className={classes.footer_margin_left}>Youtube</span>
-            </Button>
-          </div>
           <div className={classes.footer_space_around}>
             <div className={classes.footer_grid_center}>
               <p className={classes.footer_p}>Công ty sản xuất</p>

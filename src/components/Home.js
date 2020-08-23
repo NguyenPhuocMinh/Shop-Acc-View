@@ -1,16 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Button, Paper } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import useStyles from './styles';
-import LinearProgress from '../loading/LinearProgress';
-import PaginationRounded from '../pagination';
-import MenuWithRank from './openMenu/withRank';
-import MenuWithPrice from './openMenu/withPrice';
-import MenuWithHero from './openMenu/withHero';
-import GridCard from './gridCard';
+import useStyles from '../styles/HomeStyle';
+import LinearProgressCustom from '../custom/LinearProgressCustom';
+import PaginationCustom from '../custom/PaginationCustom';
+import GridCard from './GridCard';
 
 const Home = () => {
   const classes = useStyles();
@@ -58,28 +54,21 @@ const Home = () => {
       <CssBaseline />
       <Container fixed>
         <Typography component="div" className={classes.main} >
-          <div className={classes.main_head}>
-            <MenuWithRank />
-            <MenuWithPrice />
-            <MenuWithHero />
-            <Button variant="outlined" color="secondary"
-              style={{ color: '#e53935', width: '100px', height: '30px', marginTop: '13px' }}>Xóa</Button>
-          </div>
-          {isLoading && <LinearProgress />}
+          {isLoading && <LinearProgressCustom />}
           <div>
             <Grid container style={{ display: 'inline' }}>
               <Grid item xs={12} style={{ paddingTop: '10vh' }}>
                 <Grid container justify="center" spacing={2}>
-                  {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((value) => {
+                  {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((value, index) => {
                     return (
-                      <GridCard  value={value} classes={classes} />
+                      <GridCard key={index} value={value} classes={classes} />
                     )
                   })}
                 </Grid>
               </Grid>
             </Grid>
           </div>
-          <PaginationRounded
+          <PaginationCustom
             count={rows.length}
             page={page}
             rowsPerPage={rowsPerPage}

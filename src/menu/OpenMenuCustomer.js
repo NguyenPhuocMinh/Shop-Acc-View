@@ -7,9 +7,9 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import Avatar from '@material-ui/core/Avatar';
-import useStyles from '../utils/styles';
+import useStyles from '../styles/CustomerStyle';
 
-const MenuCustomer = props => {
+const OpenMenuCustomer = props => {
   const { customer } = props;
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -92,4 +92,4 @@ const MenuCustomer = props => {
   );
 };
 
-export default MenuCustomer;
+export default OpenMenuCustomer;

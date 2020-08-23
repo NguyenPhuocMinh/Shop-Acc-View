@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import { validateRegisterForm } from '../utils/ValidateForm';
-import TextFieldCustom from '../utils/TextFieldCustom';
+import TextFieldCustom from '../custom/TextFieldCustom';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 
