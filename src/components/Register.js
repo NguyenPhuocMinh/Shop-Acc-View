@@ -81,7 +81,7 @@ const Register = props => {
   };
 
   return (
-    <div>
+    <>
       <Button
         color="primary"
         onClick={handleClickOpen}
@@ -127,7 +127,7 @@ const Register = props => {
           </Alert>
         </Snackbar>
       }
-    </div>
+    </>
   );
 };
 

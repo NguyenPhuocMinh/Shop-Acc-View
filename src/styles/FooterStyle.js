@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core';
 
 const styles = makeStyles((theme) => ({
+  footer: {
+    padding: '20px',
+    marginTop : '20px'
+  },
   footer_space_around: {
     display: 'flex',
     justifyContent: 'space-around'

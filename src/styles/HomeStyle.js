@@ -1,14 +1,19 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => {
+const useStyles = makeStyles((theme) => {
   return ({
-    main: {
+    home: {
       backgroundColor: '#000',
       border: '1px ridge #212121',
-      height: 'auto'
+      height: 'auto',
     },
-    root: {
+    home_gird: {
+      padding: '20px',
+    },
+    card: {
+      background: '#000',
       maxWidth: '270px',
+      width: '300px',
       border: '2px ridge #757575'
     },
     media: {

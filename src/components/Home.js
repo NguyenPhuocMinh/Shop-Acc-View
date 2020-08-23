@@ -24,9 +24,8 @@ const Home = () => {
     setPage(0);
   };
 
-  const requestURL = `${process.env.REACT_APP_REST_API_URL}/accounts`;
-
   useEffect(() => {
+    const requestURL = `${process.env.REACT_APP_REST_API_URL}/accounts`;
     const fetchDataAccount = () => {
       const request = new Request(requestURL, {
         method: 'GET',
@@ -47,27 +46,33 @@ const Home = () => {
         })
     }
     fetchDataAccount();
-  }, [requestURL]);
+  }, []);
 
   return (
     <Fragment>
       <CssBaseline />
       <Container fixed>
-        <Typography component="div" className={classes.main} >
+        <Typography
+          id="home"
+          component="div"
+          className={classes.home}
+        >
           {isLoading && <LinearProgressCustom />}
-          <div>
-            <Grid container style={{ display: 'inline' }}>
-              <Grid item xs={12} style={{ paddingTop: '10vh' }}>
-                <Grid container justify="center" spacing={2}>
-                  {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((value, index) => {
-                    return (
-                      <GridCard key={index} value={value} classes={classes} />
-                    )
-                  })}
-                </Grid>
+          <Grid container>
+            <Grid item xs={12} className={classes.home_gird}>
+              <Grid container justify="center" spacing={2}>
+                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((value, index) => {
+                  return (
+                    <GridCard
+                      key={index}
+                      value={value}
+                      classes={classes}
+                    />
+                  )
+                })}
               </Grid>
             </Grid>
-          </div>
+          </Grid>
           <PaginationCustom
             count={rows.length}
             page={page}

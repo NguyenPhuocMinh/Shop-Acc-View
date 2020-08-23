@@ -24,7 +24,7 @@ const GridCard = props => {
   const numberAcc = get(value, 'numberAcc');
   return (
     <Grid key={id} item>
-      <Card className={classes.root} style={{ background: '#000', width: '300px' }}>
+      <Card className={classes.card}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" style={{ backgroundColor: '#8bc34a' }}>
