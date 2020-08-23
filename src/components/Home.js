@@ -73,14 +73,14 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          <PaginationCustom
-            count={rows.length}
-            page={page}
-            rowsPerPage={rowsPerPage}
-            handleChangePage={handleChangePage}
-            handleChangeRowsPerPage={handleChangeRowsPerPage}
-          />
         </Typography>
+        <PaginationCustom
+          count={rows.length}
+          page={page}
+          rowsPerPage={rowsPerPage}
+          handleChangePage={handleChangePage}
+          handleChangeRowsPerPage={handleChangeRowsPerPage}
+        />
       </Container>
     </Fragment>
   )
