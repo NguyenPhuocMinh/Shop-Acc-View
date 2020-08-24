@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => {
     home: {
       backgroundColor: '#000',
       border: '1px ridge #212121',
-      height: '180vh',
+      height: 'auto',
     },
     home_gird: {
       padding: '20px',

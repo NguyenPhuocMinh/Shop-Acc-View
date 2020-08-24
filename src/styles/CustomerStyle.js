@@ -4,17 +4,27 @@ const styles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  margin_span: {
-    marginLeft: '5px',
+  span: {
+    color: '#9e9e9e',
+    textTransform: 'capitalize'
   },
   paper: {
-    width: '340px'
+    width: 'auto',
+    height: 'auto'
+  },
+  text_center: {
+    textAlign: 'center',
+    color: '#9e9e9e'
+  },
+  image_background: {
+    background: '#8bc34a'
   },
   image_center: {
     display: 'flex',
     justifyContent: 'center'
   },
   image_large: {
+    background: '#8bc34a',
     width: theme.spacing(7),
     height: theme.spacing(7),
   },

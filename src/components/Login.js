@@ -76,9 +76,8 @@ const Login = props => {
         <Button
           style={{ color: '#8bc34a' }}
           onClick={handleClickOpen}
-          startIcon={<AccountCircleIcon />}
         >
-          Đăng nhập
+          <span className={classes.span}>Đăng nhập</span>
         </Button>
       }
       <Dialog

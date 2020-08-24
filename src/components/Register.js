@@ -87,7 +87,7 @@ const Register = props => {
         onClick={handleClickOpen}
         startIcon={<LockOpenIcon />}
       >
-        Đăng ký
+        <span className={classes.span}>Đăng ký</span>
       </Button>
       <Dialog
         open={open}
@@ -104,7 +104,7 @@ const Register = props => {
               onClick={handleClickRedirectLogin}
               startIcon={<AccountCircleIcon />}
             >
-              Đăng nhập
+               <span className={classes.span}>Đăng nhập</span>
             </Button>
           </DialogContentText>
           <FormRegister
