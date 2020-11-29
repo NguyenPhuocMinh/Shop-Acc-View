@@ -17,12 +17,21 @@ const useStyles = makeStyles((theme) => {
     },
     media: {
       height: 0,
-      paddingTop: '56.25%', // 16:9
+      paddingTop: '56.25%', // 16:9s
     },
     typography: {
       display: 'flex',
       justifyContent: 'space-around',
       color: '#9e9e9e'
+    },
+    button_view: {
+      background: 'black',
+      color: 'white',
+      border: '1px ridge #9e9e9e'
+    },
+    button_buy: {
+      background: '#8bc34a',
+      color: 'white'
     }
   })
 });

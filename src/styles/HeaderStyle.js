@@ -13,7 +13,7 @@ const styles = makeStyles((theme) => ({
   },
   header_a: {
     textDecoration: 'none',
-    color: '#e53935'
+    color: '#e53935',
   },
 }));
 

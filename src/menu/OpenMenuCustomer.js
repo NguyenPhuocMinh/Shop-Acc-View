@@ -60,7 +60,7 @@ const OpenMenuCustomer = props => {
         onClick={handleToggle}
         startIcon={<Avatar alt={firstLetterName} src="/" className={classes.image_background} />}
       >
-        {/* <span className={classes.span} >{customer.name}</span> */}
+        <span className={classes.span} >{customer.name}</span>
       </Button>
       <Popper
         style={{ zIndex: 1 }}
@@ -73,7 +73,7 @@ const OpenMenuCustomer = props => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
           >
-            <Paper >
+            <Paper className={classes.paper}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" style={{ padding: '10px' }} onKeyDown={handleListKeyDown}>
                   <div className={classes.image_center}>
@@ -81,7 +81,6 @@ const OpenMenuCustomer = props => {
                   </div>
                   <div style={{ padding: '10px' }}>
                     <div className={classes.text_center}>{customer.name}</div>
-                    <div className={classes.text_center}>{customer.email}</div>
                   </div>
                   <div className={classes.image_center}>
                     <MenuItem onClick={handleLogout}>Đăng xuất</MenuItem>
